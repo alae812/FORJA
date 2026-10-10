@@ -96,3 +96,5 @@ npm run build && npm start
 Para Supabase: crea el proyecto, ejecuta `supabase/migrations/*.sql` y define
 `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY`. Para producción, sustituye la
 sesión demo por autenticación real (el adaptador está preparado para ello).
+
+
