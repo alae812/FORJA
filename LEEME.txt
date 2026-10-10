@@ -1,0 +1,28 @@
+FORJA — Tu historia de entrenamiento
+=====================================
+
+CÓMO USARLA EN TU ORDENADOR (Windows)
+-------------------------------------
+1. Instala Node.js (versión 20 o más): https://nodejs.org
+   - Descarga el instalador "LTS" y dale a siguiente, siguiente, siguiente.
+   - No necesitas ser administrador: también vale la versión "portable" (.zip).
+
+2. Descomprime esta carpeta donde quieras (p. ej. Escritorio/FORJA).
+
+3. Abre una terminal en esa carpeta:
+   - Clic derecho dentro de la carpeta > "Abrir en Terminal" (o cmd).
+
+4. Ejecuta (solo la primera vez):
+     npm install
+
+5. Arranca la app:
+     npm run dev
+
+6. Abre en el navegador: http://localhost:3000
+
+7. Crea tu héroe en la pantalla de entrada y a entrenar.
+
+Tus datos se guardan en la carpeta "data/" de la app, solo en tu ordenador.
+Para parar la app: Ctrl + C en la terminal.
+
+¿Dudas? Pregúntale a CASH.
