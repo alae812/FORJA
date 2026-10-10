@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-abyss: #06060c;
+  --color-graphite: #0d0d17;
+  --color-panel: #141422;
+  --color-panel-2: #1b1b2d;
+  --color-line: #262640;
+  --color-neon-violet: #a78bfa;
+  --color-neon-cyan: #22d3ee;
+  --color-ember: #fb923c;
+  --color-blood: #f87171;
+  --color-mist: #9aa0b5;
+  --color-bone: #f1f2f8;
+
+  --font-display: "Rajdhani", "Geist", system-ui, sans-serif;
+  --font-sans: "Geist", system-ui, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(167, 139, 250, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(34, 211, 238, 0.08), transparent 60%),
+    var(--color-abyss);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+/* Panel de cristal oscuro */
+.glass {
+  background: linear-gradient(160deg, rgba(27, 27, 45, 0.85), rgba(13, 13, 23, 0.9));
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(12px);
+}
+
+.glow-violet {
+  box-shadow: 0 0 24px rgba(167, 139, 250, 0.25), inset 0 0 12px rgba(167, 139, 250, 0.08);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.22), inset 0 0 12px rgba(34, 211, 238, 0.08);
+}
+
+.text-glow-violet {
+  text-shadow: 0 0 18px rgba(167, 139, 250, 0.65);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.6);
+}
+
+/* Barra de XP con brillo animado */
+.xp-shine {
+  position: relative;
+  overflow: hidden;
+}
+.xp-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.35) 50%, transparent 80%);
+  animation: xp-shine 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes xp-shine {
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-shine::after {
+    animation: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-abyss);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 8px;
+}
+
+/* Inputs */
+.field-input {
+  width: 100%;
+  background: var(--color-graphite);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: var(--color-bone);
+  font-size: 1rem;
+}
+.field-input:focus {
+  outline: none;
+  border-color: var(--color-neon-violet);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+}
+.field-input::placeholder {
+  color: #5b6178;
+}
+
+select.field-input option {
+  background: var(--color-panel);
+}
+
+/* Utilidad para truncar narración */
+.narration {
+  white-space: pre-line;
+}
